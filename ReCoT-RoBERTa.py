@@ -30,8 +30,6 @@ tokenized_eval_dataset = eval_dataset.map(preprocess_function, batched=True)
 import os
 
 def recursive_cot(model, inputs, question_id, initial_steps=1, confidence_threshold=0.85, max_steps=5, output_dir='./reasoning_steps'):
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
     
     output_sequences = []
     current_step = initial_steps
@@ -48,7 +46,7 @@ def recursive_cot(model, inputs, question_id, initial_steps=1, confidence_thresh
 
         max_confidence = confidence_scores.max()
 
-        # Check confidence
+        # check confidence
         if max_confidence > confidence_threshold:
             break
         
@@ -59,10 +57,6 @@ def recursive_cot(model, inputs, question_id, initial_steps=1, confidence_thresh
         inputs = tokenizer(new_input_text, return_tensors='pt', truncation=True, padding='max_length', max_length=512)
 
         current_step += 1 
-
-    reasoning_file_path = os.path.join(output_dir, f"reasoning_{question_id}.txt")
-    with open(reasoning_file_path, 'w') as file:
-        file.write(previous_reasoning.strip())
 
     return output_sequences
 
