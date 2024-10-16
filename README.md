@@ -27,8 +27,11 @@ Model is trained on the gpqa dataset, using its main subset.
 | **ReCoT deberta-v3-xsmall(mine)**         | 26.4                   |
 | **ReCoT Electra-base-generator(mine)**    | 27.7                   |
 | **ReCoT bert-base-uncased(mine)**         |26.6                    |
+
 ## Note
 **Was able to try only these models due to computational restrictions**
+
+I only reported the best values over multiple runs
 
 ## Citations
 ```
