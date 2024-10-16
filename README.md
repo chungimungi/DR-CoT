@@ -8,7 +8,7 @@ Model is trained on the gpqa dataset, using its main subset.
 
 ## Results 
 
-| Evaluation Method and Model               | Main Set (%)           |
+| Evaluation Method and Model               | Main Set (Acc%)           |
 |-------------------------------------------|------------------------|
 | Zero-Shot Llama-2-70B-chat                | 27.6                   |
 | Few-Shot Llama-2-70B-chat                 | 26.9                   |
@@ -23,7 +23,9 @@ Model is trained on the gpqa dataset, using its main subset.
 | Zero-Shot CoT GPT-4                       | 39.5                   |
 | Few-Shot CoT GPT-4                        | 39.7                   |
 | GPT-4 with search                         | 28.7                   |
-| **ReCoT RoBERTa(mine)**                        | 23.3                   |
+| **ReCoT RoBERTa-base(mine)**                   | 23.3                   |
+| **ReCoT deberta-v3-xsmall(mine)**                   | 24.2                   |
+| **ReCoT Electra-base-generator(mine)**                   | 25.5                   |
 
 ```
 @inproceedings{rein2024gpqa,
@@ -32,5 +34,51 @@ Model is trained on the gpqa dataset, using its main subset.
       booktitle={First Conference on Language Modeling},
       year={2024},
       url={https://openreview.net/forum?id=Ti67584b98}
+}
+```
+```
+@article{DBLP:journals/corr/abs-1907-11692,
+  author    = {Yinhan Liu and
+               Myle Ott and
+               Naman Goyal and
+               Jingfei Du and
+               Mandar Joshi and
+               Danqi Chen and
+               Omer Levy and
+               Mike Lewis and
+               Luke Zettlemoyer and
+               Veselin Stoyanov},
+  title     = {RoBERTa: {A} Robustly Optimized {BERT} Pretraining Approach},
+  journal   = {CoRR},
+  volume    = {abs/1907.11692},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1907.11692},
+  archivePrefix = {arXiv},
+  eprint    = {1907.11692},
+  timestamp = {Thu, 01 Aug 2019 08:59:33 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1907-11692.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
+```
+@inproceedings{
+he2021deberta,
+title={DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION},
+author={Pengcheng He and Xiaodong Liu and Jianfeng Gao and Weizhu Chen},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=XPZIaotutsD}
+}
+```
+
+```
+@misc{clark2020electrapretrainingtextencoders,
+      title={ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators}, 
+      author={Kevin Clark and Minh-Thang Luong and Quoc V. Le and Christopher D. Manning},
+      year={2020},
+      eprint={2003.10555},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2003.10555}, 
 }
 ```
