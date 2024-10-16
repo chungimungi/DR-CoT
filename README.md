@@ -23,10 +23,10 @@ Model is trained on the gpqa dataset, using its main subset.
 | Zero-Shot CoT GPT-4                       | 39.5                   |
 | Few-Shot CoT GPT-4                        | 39.7                   |
 | GPT-4 with search                         | 28.7                   |
-| **ReCoT RoBERTa-base(mine)**                   | 24.5                   |
-| **ReCoT deberta-v3-xsmall(mine)**                   | 26.4                   |
-| **ReCoT Electra-base-generator(mine)**                   | 27.7                  |
-
+| **ReCoT RoBERTa-base(mine)**              | 24.5                   |
+| **ReCoT deberta-v3-xsmall(mine)**         | 26.4                   |
+| **ReCoT Electra-base-generator(mine)**    | 27.7                   |
+| **ReCoT bert-base-uncased(mine)**         |26.6                    |
 ## Note
 **Was able to try only these models due to computational restrictions**
 
@@ -86,4 +86,22 @@ url={https://openreview.net/forum?id=XPZIaotutsD}
       url={https://arxiv.org/abs/2003.10555}, 
 }
 ```
-
+```
+@article{DBLP:journals/corr/abs-1810-04805,
+  author    = {Jacob Devlin and
+               Ming{-}Wei Chang and
+               Kenton Lee and
+               Kristina Toutanova},
+  title     = {{BERT:} Pre-training of Deep Bidirectional Transformers for Language
+               Understanding},
+  journal   = {CoRR},
+  volume    = {abs/1810.04805},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1810.04805},
+  archivePrefix = {arXiv},
+  eprint    = {1810.04805},
+  timestamp = {Tue, 30 Oct 2018 20:39:56 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1810-04805.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
