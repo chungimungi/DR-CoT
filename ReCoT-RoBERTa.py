@@ -27,8 +27,6 @@ tokenized_train_dataset = train_dataset.map(preprocess_function, batched=True)
 tokenized_eval_dataset = eval_dataset.map(preprocess_function, batched=True)
 
 # Recursive CoT
-import os
-
 def recursive_cot(model, inputs, question_id, initial_steps=1, confidence_threshold=0.85, max_steps=5, output_dir='./reasoning_steps'):
     
     output_sequences = []
