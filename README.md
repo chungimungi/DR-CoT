@@ -23,9 +23,9 @@ Model is trained on the gpqa dataset, using its main subset.
 | Zero-Shot CoT GPT-4                       | 39.5                   |
 | Few-Shot CoT GPT-4                        | 39.7                   |
 | GPT-4 with search                         | 28.7                   |
-| **ReCoT RoBERTa-base(mine)**                   | 23.3                   |
-| **ReCoT deberta-v3-xsmall(mine)**                   | 24.2                   |
-| **ReCoT Electra-base-generator(mine)**                   | 25.5                   |
+| **ReCoT RoBERTa-base(mine)**                   | 24.5                   |
+| **ReCoT deberta-v3-xsmall(mine)**                   | 26.4                   |
+| **ReCoT Electra-base-generator(mine)**                   | 27.7                  |
 
 
 ## Citations
