@@ -1,5 +1,5 @@
 # DR-CoT
-
+Dynamic Recursive Chain of Thought with Meta Reasoning for parameter efficient models.
 
 
 ## Training
@@ -27,9 +27,6 @@ Model is trained on the gpqa dataset, using its main and diamond subset.
 | **DR-CoT deberta-v3-base(mine)**          | -            | -               |
 | **DR-CoT electra-base-generator(mine)**   | 27.7         | 0.325           |
 | **DR-CoT bert-base-uncased(mine)**        | 26.6         | 0.35            |
-
-## Note
-**Was able to try only these models due to computational restrictions**
 
 ## Citations
 ```
