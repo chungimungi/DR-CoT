@@ -31,8 +31,6 @@ Model is trained on the gpqa dataset, using its main subset.
 ## Note
 **Was able to try only these models due to computational restrictions**
 
-I only reported the best values over multiple runs
-
 ## Citations
 ```
 @inproceedings{rein2024gpqa,
