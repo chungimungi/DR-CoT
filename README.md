@@ -23,10 +23,11 @@ Model is trained on the gpqa dataset, using its main and diamond subset.
 | Zero-Shot CoT GPT-4                       | 39.5         | 37.5            |
 | Few-Shot CoT GPT-4                        | 39.7         | 38.8            |
 | GPT-4 with search                         | 28.7         | 27.6            |
-| **DR-CoT roberta-base(mine)**             | 26.7         | 0.30            | 
-| **DR-CoT deberta-v3-base(mine)**          | 27.8         | 0.30            |
-| **DR-CoT electra-base-generator(mine)**   | 27.7         | 0.325           |
-| **DR-CoT bert-base-uncased(mine)**        | 26.6         | 0.35            |
+| **DR-CoT roberta-base(mine)**             | 26.7         | 30.0            |
+| **DR-CoT deberta-v3-base(mine)**          | 27.8         | 30.0            |
+| **DR-CoT electra-base-generator(mine)**   | 27.7         | 32.5            |
+| **DR-CoT bert-base-uncased(mine)**        | 26.6         | 35.0            |
+| **DR-CoT albert-base-v2(mine)**           | 24.2         | 31.7            |
 
 ## Citations
 ```
