@@ -4,29 +4,29 @@
 
 ## Training
 
-Model is trained on the gpqa dataset, using its main subset.
+Model is trained on the gpqa dataset, using its main and diamond subset.
 
 ## Results 
 
-| Evaluation Method and Model               | Main Set (Acc%)           |
-|-------------------------------------------|------------------------|
-| Zero-Shot Llama-2-70B-chat                | 27.6                   |
-| Few-Shot Llama-2-70B-chat                 | 26.9                   |
-| Zero-Shot CoT Llama-2-70B-chat            | 28.5                   |
-| Few-Shot CoT Llama-2-70B-chat             | 29.1                   |
-| Zero-Shot GPT-3.5-turbo-16k               | 29.8                   |
-| Few-Shot GPT-3.5-turbo-16k                | 28.9                   |
-| Zero-Shot CoT GPT-3.5-turbo-16k           | 28.9                   |
-| Few-Shot CoT GPT-3.5-turbo-16k            | 28.0                   |
-| Zero-Shot GPT-4                           | 32.1                   |
-| Few-Shot GPT-4                            | 38.1                   |
-| Zero-Shot CoT GPT-4                       | 39.5                   |
-| Few-Shot CoT GPT-4                        | 39.7                   |
-| GPT-4 with search                         | 28.7                   |
-| **DR-CoT RoBERTa-base(mine)**             | 26.7                   |
-| **DR-CoT deberta-v3-base(mine)**          | -                 |
-| **DR-CoT Electra-base-generator(mine)**   | 27.7                   |
-| **DR-CoT bert-base-uncased(mine)**        | 26.6                   |
+| Evaluation Method and Model               | Main Set (%) | Diamond Set (%) |
+|-------------------------------------------|--------------|-----------------|
+| Zero-Shot Llama-2-70B-chat                | 27.6         | 26.5            |
+| Few-Shot Llama-2-70B-chat                 | 26.9         | 24.0            |
+| Zero-Shot CoT Llama-2-70B-chat            | 28.5         | 31.1            |
+| Few-Shot CoT Llama-2-70B-chat             | 29.1         | 28.1            |
+| Zero-Shot GPT-3.5-turbo-16k               | 29.8         | 30.6            |
+| Few-Shot GPT-3.5-turbo-16k                | 28.9         | 26.0            |
+| Zero-Shot CoT GPT-3.5-turbo-16k           | 28.9         | 28.1            |
+| Few-Shot CoT GPT-3.5-turbo-16k            | 28.0         | 29.6            |
+| Zero-Shot GPT-4                           | 32.1         | 34.2            |
+| Few-Shot GPT-4                            | 38.1         | 39.3            |
+| Zero-Shot CoT GPT-4                       | 39.5         | 37.5            |
+| Few-Shot CoT GPT-4                        | 39.7         | 38.8            |
+| GPT-4 with search                         | 28.7         | 27.6            |
+| **DR-CoT RoBERTa-base(mine)**             | 26.7         | 0.30            | 
+| **DR-CoT deberta-v3-base(mine)**          | -            |
+| **DR-CoT Electra-base-generator(mine)**   | 27.7         |
+| **DR-CoT bert-base-uncased(mine)**        | 26.6         |
 
 ## Note
 **Was able to try only these models due to computational restrictions**
