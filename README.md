@@ -23,10 +23,10 @@ Model is trained on the gpqa dataset, using its main subset.
 | Zero-Shot CoT GPT-4                       | 39.5                   |
 | Few-Shot CoT GPT-4                        | 39.7                   |
 | GPT-4 with search                         | 28.7                   |
-| **DR-CoT RoBERTa-base(mine)**              | 26.7                   |
-| **DR-CoT deberta-v3-xsmall(mine)**         | 24.4                   |
-| **DR-CoT Electra-base-generator(mine)**    | 27.7                   |
-| **DR-CoT bert-base-uncased(mine)**         | 26.6                   |
+| **DR-CoT RoBERTa-base(mine)**             | 26.7                   |
+| **DR-CoT deberta-v3-base(mine)**          | -                 |
+| **DR-CoT Electra-base-generator(mine)**   | 27.7                   |
+| **DR-CoT bert-base-uncased(mine)**        | 26.6                   |
 
 ## Note
 **Was able to try only these models due to computational restrictions**
