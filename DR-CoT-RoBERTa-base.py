@@ -6,33 +6,28 @@ import torch
 from sklearn.metrics import accuracy_score
 import os
 
-# Load the dataset
 dataset = load_dataset('jeggers/gpqa_formatted', 'main', split='train')
 
-# Train/test split
 train_test_split = dataset.train_test_split(test_size=0.2, seed=42)
 train_dataset = train_test_split['train']
 eval_dataset = train_test_split['test']
 
-# Load the tokenizer and model
 model_name = "FacebookAI/roberta-base"
 tokenizer = RobertaTokenizer.from_pretrained(model_name)
 model = RobertaForSequenceClassification.from_pretrained(model_name, num_labels=len(dataset['options'][0]))
 
-# Preprocess function
 def preprocess_function(examples):
     inputs = [f"{q} {opt}" for q, opt in zip(examples['Question'], examples['options'])]
     model_inputs = tokenizer(inputs, truncation=True, padding='max_length', max_length=512)
-    model_inputs['labels'] = examples['answer']  # Set labels
+    model_inputs['labels'] = examples['answer'] 
     return model_inputs
 
-# Tokenize datasets
 tokenized_train_dataset = train_dataset.map(preprocess_function, batched=True)
 tokenized_eval_dataset = eval_dataset.map(preprocess_function, batched=True)
 
 # DR-CoT: Dynamic Recursive CoT with Meta-Reasoning
 def dynamic_recursive_cot(model, tokenizer, inputs, question_id, current_step=1, confidence_threshold=0.85, 
-                          max_steps=5, previous_reasoning="", output_sequences=None, confidence_scores=None, 
+                          max_steps=10, previous_reasoning="", output_sequences=None, confidence_scores=None, 
                           branching_factor=2):
     
     if output_sequences is None:
@@ -82,14 +77,13 @@ def dynamic_recursive_cot(model, tokenizer, inputs, question_id, current_step=1,
 
     return output_sequences
 
-# Function to compute metrics
 def compute_metrics(eval_pred):
     logits, labels = eval_pred
     predictions = logits.argmax(axis=-1)
     acc = accuracy_score(labels, predictions)
     return {"accuracy": acc}
 
-# Training arguments
+#train args
 training_args = TrainingArguments(
     output_dir='./results',
     evaluation_strategy="epoch",
@@ -106,7 +100,7 @@ training_args = TrainingArguments(
     metric_for_best_model="accuracy",
 )
 
-# Optimizer and scheduler
+#lrs
 num_training_steps = len(train_dataset) * training_args.num_train_epochs // training_args.per_device_train_batch_size
 warmup_steps = num_training_steps // 10
 optimizer = AdamW(model.parameters(), lr=training_args.learning_rate)
@@ -116,7 +110,6 @@ scheduler = get_linear_schedule_with_warmup(
     num_training_steps=num_training_steps
 )
 
-# Trainer
 trainer = Trainer(
     model=model,
     args=training_args,
@@ -128,10 +121,10 @@ trainer = Trainer(
     callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]  
 )
 
-# Train the model
+#train
 trainer.train()
 
-# Evaluate the model
+#eval
 results = trainer.evaluate()
 print("Evaluation results:", results)
 print("Accuracy:", results['eval_accuracy'])
